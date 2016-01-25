@@ -1,0 +1,964 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panel Admin Responsive, with Bootstrap</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/glyphicons.all.css" />
+
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	
+	<script type="text/javascript" src="flot/jquery.flot.js"></script>
+	<script type="text/javascript" src="flot/jquery.flot.pie.js"></script>
+	<script type="text/javascript" src="flot/jquery.flot.resize.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-alert.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-button.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-carousel.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-scrollspy.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-tab.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-transition.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-typeahead.js"></script>
+
+	<!-- Uncomment to use LESS The dynamic stylesheet language. | http://lesscss.org/ -->
+	<!-- <link rel="stylesheet/less" type="text/css" href="css/main.less" /> -->
+	<!-- <script type="text/javascript" src="js/less-1.3.0.min.js"></script> -->
+
+	<!-- Uncomment to use CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+
+	<!-- DEMO SCRIPTS -->
+	<script type="text/javascript" src="js/demo.js"></script>
+</head>
+<body>
+	<!-- BEGIN #navbar -->
+	<div class="navbar" id="navbar">
+		<div class="navbar-inner">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-user icon-white"></span>
+			</a>
+			<a class="brand" href="#"><img src="images/logo.gif"></a>
+			<div class="nav-collapse collapse">
+				<form class="navbar-search pull-left" action="">
+					<input type="text" class="search-query span2" placeholder="Search">
+				</form>
+				<ul class="nav pull-right">
+					<li><a href="#"><i class="icon-asterisk icon-white"></i> Tickets <span class="notify">15</span></a></li>
+					<li><a href="form_layouts.html"><i class="icon-cog icon-white"></i> Settings</a></li>
+					<li><a href="#"><i class="icon-off icon-white"></i> logout</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="breadcrumb">
+			<div class="logged pull-right"><span>logged:</span> <a href="#">John Doe</a></div>
+			<ul>
+				<li class="active">Interface Elements</li>
+			</ul>
+		</div>
+	</div> <!-- END #navbar -->
+
+	<!-- BEGIN #main -->
+	<div class="main" id="main">
+		<!-- BEGIN #main-nav -->
+		<div class="navigation" id="main-nav">
+			<ul class="nav">
+				<li>
+					<a href="index.html"><span class="label label-inverse"><i class="icon-home icon-white"></i></span> Dashboard <span class="badge badge-warning">10</span></a>
+				</li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#forms"><span class="label label-inverse"><i class="icon-list icon-white"></i></span> Forms <span class="badge badge-info">1</span></a>
+					<ul class="collapse out" id="forms">
+						<li><a href="form_layouts.html">Layouts</a></li>
+						<li class="active"><a href="form_validating.html">Validating & Options</a></li>
+						<li><a href="form_login.html">Login form</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="tables.html"><span class="label label-inverse"><i class="icon-th-large icon-white"></i></span> Tables</a>
+				</li>
+				<li class="active">
+					<a href="elements.html"><span class="label label-inverse"><i class="icon-tasks icon-white"></i></span> Interface Elements</a>
+				</li>
+				<li>
+					<a href="images.html"><span class="label label-inverse"><i class="icon-tasks icon-white"></i></span> Images</a>
+				</li>
+				<li>
+					<a href="statistics.html"><span class="label label-inverse"><i class="icon-signal icon-white"></i></span> Statistics <span class="badge badge-success">3</span></a>
+				</li>
+				<li>
+					<a href="404.html"><span class="label label-inverse"><i class="icon-exclamation-sign icon-white"></i></span> Error Page</a>
+				</li>
+			</ul>
+		</div><!-- END #main-nav -->
+
+		<!-- BEGIN #main-content -->
+		<div class="content" id="main-content">
+			<!-- BEGIN #main-content-row -->
+			<div class="row-fluid" id="main-content-row">
+				<div class="span6">
+					<h2><i class="glyphicon-hand-up"></i> Buttons</h2>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Button</th>
+								<th>Large Button</th>
+								<th>Small Button</th>
+								<th>Disabled Button</th>
+								<th>Button with Icon</th>
+								<th>Split Button</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><a class="btn" href="#">Default</a></td>
+								<td><a class="btn btn-large" href="#">Default</a></td>
+								<td><a class="btn btn-small" href="#">Default</a></td>
+								<td><a class="btn disabled" href="#">Default</a></td>
+								<td><a class="btn" href="#"><i class="icon-cog"></i> Default</a></td>
+								<td>
+									<div class="btn-group">
+										<a class="btn" href="#">Default</a>
+										<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>&nbsp;</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+								</td>
+							</tr>
+							<tr>
+								<td><a class="btn btn-primary" href="#">Primary</a></td>
+								<td><a class="btn btn-primary btn-large" href="#">Primary</a></td>
+								<td><a class="btn btn-primary btn-small" href="#">Primary</a></td>
+								<td><a class="btn btn-primary disabled" href="#">Primary</a></td>
+								<td><a class="btn btn-primary" href="#"><i class="icon-shopping-cart icon-white"></i> Primary</a></td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-primary" href="#">Primary</a>
+										<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>&nbsp;</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+								</td>
+							</tr>
+							<tr>
+								<td><a class="btn btn-info" href="#">Info</a></td>
+								<td><a class="btn btn-info btn-large" href="#">Info</a></td>
+								<td><a class="btn btn-info btn-small" href="#">Info</a></td>
+								<td><a class="btn btn-info disabled" href="#">Info</a></td>
+								<td><a class="btn btn-info" href="#"><i class="icon-exclamation-sign icon-white"></i> Info</a></td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-info" href="#">Info</a>
+										<a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>&nbsp;</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+								</td>
+							</tr>
+							<tr>
+								<td><a class="btn btn-success" href="#">Success</a></td>
+								<td><a class="btn btn-success btn-large" href="#">Success</a></td>
+								<td><a class="btn btn-success btn-small" href="#">Success</a></td>
+								<td><a class="btn btn-success disabled" href="#">Success</a></td>
+								<td><a class="btn btn-success" href="#"><i class="icon-ok icon-white"></i> Success</a></td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-success" href="#">Success</a>
+										<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>&nbsp;</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+								</td>
+							</tr>
+							<tr>
+								<td><a class="btn btn-warning" href="#">Warning</a></td>
+								<td><a class="btn btn-warning btn-large" href="#">Warning</a></td>
+								<td><a class="btn btn-warning btn-small" href="#">Warning</a></td>
+								<td><a class="btn btn-warning disabled" href="#">Warning</a></td>
+								<td><a class="btn btn-warning" href="#"><i class="icon-warning-sign icon-white"></i> Warning</a></td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-warning" href="#">Warning</a>
+										<a class="btn btn-warning dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>&nbsp;</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+								</td>
+							</tr>
+							<tr>
+								<td><a class="btn btn-danger" href="#">Danger</a></td>
+								<td><a class="btn btn-danger btn-large" href="#">Danger</a></td>
+								<td><a class="btn btn-danger btn-small" href="#">Danger</a></td>
+								<td><a class="btn btn-danger disabled" href="#">Danger</a></td>
+								<td><a class="btn btn-danger" href="#"><i class="icon-remove icon-white"></i> Danger</a></td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-danger" href="#">Danger</a>
+										<a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>&nbsp;</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+								</td>
+							</tr>
+							<tr>
+								<td><a class="btn btn-inverse" href="#">Inverse</a></td>
+								<td><a class="btn btn-inverse btn-large" href="#">Inverse</a></td>
+								<td><a class="btn btn-inverse btn-small" href="#">Inverse</a></td>
+								<td><a class="btn btn-inverse disabled" href="#">Inverse</a></td>
+								<td><a class="btn btn-inverse" href="#"><i class="icon-random icon-white"></i> Inverse</a></td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-inverse" href="#">Inverse</a>
+										<a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>&nbsp;</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!--/span-->
+				<div class="span6 padding">
+					<h2><i class="glyphicon-glass"></i> Icons <small>Graciously provided by <a href="http://glyphicons.com" target="_blank">Glyphicons</a></small></h2>
+					<p>Use any button to trigger a dropdown menu by placing it within a <code>.btn-group</code> and providing the proper menu markup.</p>
+					<table class="table">
+						<tbody><tr>
+							<td><i class="glyphicon-glass" rel="tooltip" title=".glyphicon-glass"></i></td>
+							<td><i class="glyphicon-leaf" rel="tooltip" title=".glyphicon-leaf"></i></td>
+							<td><i class="glyphicon-dog" rel="tooltip" title=".glyphicon-dog"></i></td>
+							<td><i class="glyphicon-user" rel="tooltip" title=".glyphicon-user"></i></td>
+							<td><i class="glyphicon-girl" rel="tooltip" title=".glyphicon-girl"></i></td>
+							<td><i class="glyphicon-car" rel="tooltip" title=".glyphicon-car"></i></td>
+							<td><i class="glyphicon-user-add" rel="tooltip" title=".glyphicon-user-add"></i></td>
+							<td><i class="glyphicon-user-remove" rel="tooltip" title=".glyphicon-user-remove"></i></td>
+							<td><i class="glyphicon-film" rel="tooltip" title=".glyphicon-film"></i></td>
+							<td><i class="glyphicon-magic" rel="tooltip" title=".glyphicon-magic"></i></td>
+							<td><i class="glyphicon-envelope" rel="tooltip" title=".glyphicon-envelope"></i></td>
+							<td><i class="glyphicon-camera" rel="tooltip" title=".glyphicon-camera"></i></td>
+							<td><i class="glyphicon-heart" rel="tooltip" title=".glyphicon-heart"></i></td>
+							<td><i class="glyphicon-beach-umbrella" rel="tooltip" title=".glyphicon-beach-umbrella"></i></td>
+							<td><i class="glyphicon-train" rel="tooltip" title=".glyphicon-train"></i></td>
+							<td><i class="glyphicon-print" rel="tooltip" title=".glyphicon-print"></i></td>
+							<td><i class="glyphicon-bin" rel="tooltip" title=".glyphicon-bin"></i></td>
+							<td><i class="glyphicon-music" rel="tooltip" title=".glyphicon-music"></i></td>
+							<td><i class="glyphicon-note" rel="tooltip" title=".glyphicon-note"></i></td>
+							<td><i class="glyphicon-cogwheel" rel="tooltip" title=".glyphicon-cogwheel"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-home" rel="tooltip" title=".glyphicon-home"></i></td>
+							<td><i class="glyphicon-snowflake" rel="tooltip" title=".glyphicon-snowflake"></i></td>
+							<td><i class="glyphicon-fire" rel="tooltip" title=".glyphicon-fire"></i></td>
+							<td><i class="glyphicon-cogwheels" rel="tooltip" title=".glyphicon-cogwheels"></i></td>
+							<td><i class="glyphicon-parents" rel="tooltip" title=".glyphicon-parents"></i></td>
+							<td><i class="glyphicon-binoculars" rel="tooltip" title=".glyphicon-binoculars"></i></td>
+							<td><i class="glyphicon-road" rel="tooltip" title=".glyphicon-road"></i></td>
+							<td><i class="glyphicon-search" rel="tooltip" title=".glyphicon-search"></i></td>
+							<td><i class="glyphicon-cars" rel="tooltip" title=".glyphicon-cars"></i></td>
+							<td><i class="glyphicon-notes-2" rel="tooltip" title=".glyphicon-notes-2"></i></td>
+							<td><i class="glyphicon-pencil" rel="tooltip" title=".glyphicon-pencil"></i></td>
+							<td><i class="glyphicon-bus" rel="tooltip" title=".glyphicon-bus"></i></td>
+							<td><i class="glyphicon-wifi-alt" rel="tooltip" title=".glyphicon-wifi-alt"></i></td>
+							<td><i class="glyphicon-luggage" rel="tooltip" title=".glyphicon-luggage"></i></td>
+							<td><i class="glyphicon-old-man" rel="tooltip" title=".glyphicon-old-man"></i></td>
+							<td><i class="glyphicon-woman" rel="tooltip" title=".glyphicon-woman"></i></td>
+							<td><i class="glyphicon-file" rel="tooltip" title=".glyphicon-file"></i></td>
+							<td><i class="glyphicon-credit" rel="tooltip" title=".glyphicon-credit"></i></td>
+							<td><i class="glyphicon-airplane" rel="tooltip" title=".glyphicon-airplane"></i></td>
+							<td><i class="glyphicon-notes" rel="tooltip" title=".glyphicon-notes"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-stats" rel="tooltip" title=".glyphicon-stats"></i></td>
+							<td><i class="glyphicon-charts" rel="tooltip" title=".glyphicon-charts"></i></td>
+							<td><i class="glyphicon-pie-chart" rel="tooltip" title=".glyphicon-pie-chart"></i></td>
+							<td><i class="glyphicon-group" rel="tooltip" title=".glyphicon-group"></i></td>
+							<td><i class="glyphicon-keys" rel="tooltip" title=".glyphicon-keys"></i></td>
+							<td><i class="glyphicon-calendar" rel="tooltip" title=".glyphicon-calendar"></i></td>
+							<td><i class="glyphicon-router" rel="tooltip" title=".glyphicon-router"></i></td>
+							<td><i class="glyphicon-camera-small" rel="tooltip" title=".glyphicon-camera-small"></i></td>
+							<td><i class="glyphicon-dislikes" rel="tooltip" title=".glyphicon-dislikes"></i></td>
+							<td><i class="glyphicon-star" rel="tooltip" title=".glyphicon-star"></i></td>
+							<td><i class="glyphicon-link" rel="tooltip" title=".glyphicon-link"></i></td>
+							<td><i class="glyphicon-eye-open" rel="tooltip" title=".glyphicon-eye-open"></i></td>
+							<td><i class="glyphicon-eye-close" rel="tooltip" title=".glyphicon-eye-close"></i></td>
+							<td><i class="glyphicon-alarm" rel="tooltip" title=".glyphicon-alarm"></i></td>
+							<td><i class="glyphicon-clock" rel="tooltip" title=".glyphicon-clock"></i></td>
+							<td><i class="glyphicon-stopwatch" rel="tooltip" title=".glyphicon-stopwatch"></i></td>
+							<td><i class="glyphicon-projector" rel="tooltip" title=".glyphicon-projector"></i></td>
+							<td><i class="glyphicon-history" rel="tooltip" title=".glyphicon-history"></i></td>
+							<td><i class="glyphicon-truck" rel="tooltip" title=".glyphicon-truck"></i></td>
+							<td><i class="glyphicon-cargo" rel="tooltip" title=".glyphicon-cargo"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-compass" rel="tooltip" title=".glyphicon-compass"></i></td>
+							<td><i class="glyphicon-keynote" rel="tooltip" title=".glyphicon-keynote"></i></td>
+							<td><i class="glyphicon-attach" rel="tooltip" title=".glyphicon-attach"></i></td>
+							<td><i class="glyphicon-power" rel="tooltip" title=".glyphicon-power"></i></td>
+							<td><i class="glyphicon-lightbulb" rel="tooltip" title=".glyphicon-lightbulb"></i></td>
+							<td><i class="glyphicon-tag" rel="tooltip" title=".glyphicon-tag"></i></td>
+							<td><i class="glyphicon-tags" rel="tooltip" title=".glyphicon-tags"></i></td>
+							<td><i class="glyphicon-cleaning" rel="tooltip" title=".glyphicon-cleaning"></i></td>
+							<td><i class="glyphicon-ruller" rel="tooltip" title=".glyphicon-ruller"></i></td>
+							<td><i class="glyphicon-gift" rel="tooltip" title=".glyphicon-gift"></i></td>
+							<td><i class="glyphicon-umbrella" rel="tooltip" title=".glyphicon-umbrella"></i></td>
+							<td><i class="glyphicon-book" rel="tooltip" title=".glyphicon-book"></i></td>
+							<td><i class="glyphicon-bookmark" rel="tooltip" title=".glyphicon-bookmark"></i></td>
+							<td><i class="glyphicon-signal" rel="tooltip" title=".glyphicon-signal"></i></td>
+							<td><i class="glyphicon-cup" rel="tooltip" title=".glyphicon-cup"></i></td>
+							<td><i class="glyphicon-stroller" rel="tooltip" title=".glyphicon-stroller"></i></td>
+							<td><i class="glyphicon-headphones" rel="tooltip" title=".glyphicon-headphones"></i></td>
+							<td><i class="glyphicon-headset" rel="tooltip" title=".glyphicon-headset"></i></td>
+							<td><i class="glyphicon-warning-sign" rel="tooltip" title=".glyphicon-warning-sign"></i></td>
+							<td><i class="glyphicon-signal" rel="tooltip" title=".glyphicon-signal"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-retweet" rel="tooltip" title=".glyphicon-retweet"></i></td>
+							<td><i class="glyphicon-refresh" rel="tooltip" title=".glyphicon-refresh"></i></td>
+							<td><i class="glyphicon-roundabout" rel="tooltip" title=".glyphicon-roundabout"></i></td>
+							<td><i class="glyphicon-random" rel="tooltip" title=".glyphicon-random"></i></td>
+							<td><i class="glyphicon-heat" rel="tooltip" title=".glyphicon-heat"></i></td>
+							<td><i class="glyphicon-repeat" rel="tooltip" title=".glyphicon-repeat"></i></td>
+							<td><i class="glyphicon-display" rel="tooltip" title=".glyphicon-display"></i></td>
+							<td><i class="glyphicon-log-book" rel="tooltip" title=".glyphicon-log-book"></i></td>
+							<td><i class="glyphicon-adress-book" rel="tooltip" title=".glyphicon-adress-book"></i></td>
+							<td><i class="glyphicon-magnet" rel="tooltip" title=".glyphicon-magnet"></i></td>
+							<td><i class="glyphicon-table" rel="tooltip" title=".glyphicon-table"></i></td>
+							<td><i class="glyphicon-adjust" rel="tooltip" title=".glyphicon-adjust"></i></td>
+							<td><i class="glyphicon-tint" rel="tooltip" title=".glyphicon-tint"></i></td>
+							<td><i class="glyphicon-crop" rel="tooltip" title=".glyphicon-crop"></i></td>
+							<td><i class="glyphicon-vector-path-" rel="tooltip" title=".glyphicon-vector-path-"></i></td>
+							<td><i class="glyphicon-vector-path-" rel="tooltip" title=".glyphicon-vector-path-"></i></td>
+							<td><i class="glyphicon-vector-path-" rel="tooltip" title=".glyphicon-vector-path-"></i></td>
+							<td><i class="glyphicon-vector-path-" rel="tooltip" title=".glyphicon-vector-path-"></i></td>
+							<td><i class="glyphicon-vector-path-" rel="tooltip" title=".glyphicon-vector-path-"></i></td>
+							<td><i class="glyphicon-vector-path-" rel="tooltip" title=".glyphicon-vector-path-"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-font" rel="tooltip" title=".glyphicon-font"></i></td>
+							<td><i class="glyphicon-italic" rel="tooltip" title=".glyphicon-italic"></i></td>
+							<td><i class="glyphicon-bold" rel="tooltip" title=".glyphicon-bold"></i></td>
+							<td><i class="glyphicon-text-underline" rel="tooltip" title=".glyphicon-text-underline"></i></td>
+							<td><i class="glyphicon-text-strike" rel="tooltip" title=".glyphicon-text-strike"></i></td>
+							<td><i class="glyphicon-text-height" rel="tooltip" title=".glyphicon-text-height"></i></td>
+							<td><i class="glyphicon-text-width" rel="tooltip" title=".glyphicon-text-width"></i></td>
+							<td><i class="glyphicon-text-resize" rel="tooltip" title=".glyphicon-text-resize"></i></td>
+							<td><i class="glyphicon-left-indent" rel="tooltip" title=".glyphicon-left-indent"></i></td>
+							<td><i class="glyphicon-right-indent" rel="tooltip" title=".glyphicon-right-indent"></i></td>
+							<td><i class="glyphicon-align-left" rel="tooltip" title=".glyphicon-align-left"></i></td>
+							<td><i class="glyphicon-align-center" rel="tooltip" title=".glyphicon-align-center"></i></td>
+							<td><i class="glyphicon-align-right" rel="tooltip" title=".glyphicon-align-right"></i></td>
+							<td><i class="glyphicon-justify" rel="tooltip" title=".glyphicon-justify"></i></td>
+							<td><i class="glyphicon-list" rel="tooltip" title=".glyphicon-list"></i></td>
+							<td><i class="glyphicon-text-smaller" rel="tooltip" title=".glyphicon-text-smaller"></i></td>
+							<td><i class="glyphicon-text-bigger" rel="tooltip" title=".glyphicon-text-bigger"></i></td>
+							<td><i class="glyphicon-embed" rel="tooltip" title=".glyphicon-embed"></i></td>
+							<td><i class="glyphicon-embed-close" rel="tooltip" title=".glyphicon-embed-close"></i></td>
+							<td><i class="glyphicon-adjust" rel="tooltip" title=".glyphicon-adjust"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-message-full" rel="tooltip" title=".glyphicon-message-full"></i></td>
+							<td><i class="glyphicon-message-empty" rel="tooltip" title=".glyphicon-message-empty"></i></td>
+							<td><i class="glyphicon-message-in" rel="tooltip" title=".glyphicon-message-in"></i></td>
+							<td><i class="glyphicon-message-out" rel="tooltip" title=".glyphicon-message-out"></i></td>
+							<td><i class="glyphicon-message-plus" rel="tooltip" title=".glyphicon-message-plus"></i></td>
+							<td><i class="glyphicon-message-minus" rel="tooltip" title=".glyphicon-message-minus"></i></td>
+							<td><i class="glyphicon-message-ban" rel="tooltip" title=".glyphicon-message-ban"></i></td>
+							<td><i class="glyphicon-message-flag" rel="tooltip" title=".glyphicon-message-flag"></i></td>
+							<td><i class="glyphicon-message-lock" rel="tooltip" title=".glyphicon-message-lock"></i></td>
+							<td><i class="glyphicon-message-new" rel="tooltip" title=".glyphicon-message-new"></i></td>
+							<td><i class="glyphicon-inbox" rel="tooltip" title=".glyphicon-inbox"></i></td>
+							<td><i class="glyphicon-inbox-plus" rel="tooltip" title=".glyphicon-inbox-plus"></i></td>
+							<td><i class="glyphicon-inbox-minus" rel="tooltip" title=".glyphicon-inbox-minus"></i></td>
+							<td><i class="glyphicon-inbox-lock" rel="tooltip" title=".glyphicon-inbox-lock"></i></td>
+							<td><i class="glyphicon-inbox-in" rel="tooltip" title=".glyphicon-inbox-in"></i></td>
+							<td><i class="glyphicon-inbox-out" rel="tooltip" title=".glyphicon-inbox-out"></i></td>
+							<td><i class="glyphicon-computer-locked" rel="tooltip" title=".glyphicon-computer-locked"></i></td>
+							<td><i class="glyphicon-computer-service" rel="tooltip" title=".glyphicon-computer-service"></i></td>
+							<td><i class="glyphicon-computer-proces" rel="tooltip" title=".glyphicon-computer-proces"></i></td>
+							<td><i class="glyphicon-phone" rel="tooltip" title=".glyphicon-phone"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-database-lock" rel="tooltip" title=".glyphicon-database-lock"></i></td>
+							<td><i class="glyphicon-database-plus" rel="tooltip" title=".glyphicon-database-plus"></i></td>
+							<td><i class="glyphicon-database-minus" rel="tooltip" title=".glyphicon-database-minus"></i></td>
+							<td><i class="glyphicon-database-ban" rel="tooltip" title=".glyphicon-database-ban"></i></td>
+							<td><i class="glyphicon-folder-open" rel="tooltip" title=".glyphicon-folder-open"></i></td>
+							<td><i class="glyphicon-folder-plus" rel="tooltip" title=".glyphicon-folder-plus"></i></td>
+							<td><i class="glyphicon-folder-minus" rel="tooltip" title=".glyphicon-folder-minus"></i></td>
+							<td><i class="glyphicon-folder-lock" rel="tooltip" title=".glyphicon-folder-lock"></i></td>
+							<td><i class="glyphicon-folder-flag" rel="tooltip" title=".glyphicon-folder-flag"></i></td>
+							<td><i class="glyphicon-folder-new" rel="tooltip" title=".glyphicon-folder-new"></i></td>
+							<td><i class="glyphicon-check" rel="tooltip" title=".glyphicon-check"></i></td>
+							<td><i class="glyphicon-edit" rel="tooltip" title=".glyphicon-edit"></i></td>
+							<td><i class="glyphicon-new-window" rel="tooltip" title=".glyphicon-new-window"></i></td>
+							<td><i class="glyphicon-more-windows" rel="tooltip" title=".glyphicon-more-windows"></i></td>
+							<td><i class="glyphicon-show-big-" rel="tooltip" title=".glyphicon-show-big-"></i></td>
+							<td><i class="glyphicon-show-thumbnails" rel="tooltip" title=".glyphicon-show-thumbnails"></i></td>
+							<td><i class="glyphicon-show-thumbnails-" rel="tooltip" title=".glyphicon-show-thumbnails-"></i></td>
+							<td><i class="glyphicon-show-lines" rel="tooltip" title=".glyphicon-show-lines"></i></td>
+							<td><i class="glyphicon-playlist" rel="tooltip" title=".glyphicon-playlist"></i></td>
+							<td><i class="glyphicon-picture" rel="tooltip" title=".glyphicon-picture"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-imac" rel="tooltip" title=".glyphicon-imac"></i></td>
+							<td><i class="glyphicon-macbook" rel="tooltip" title=".glyphicon-macbook"></i></td>
+							<td><i class="glyphicon-ipad" rel="tooltip" title=".glyphicon-ipad"></i></td>
+							<td><i class="glyphicon-iphone" rel="tooltip" title=".glyphicon-iphone"></i></td>
+							<td><i class="glyphicon-iphone-transfer" rel="tooltip" title=".glyphicon-iphone-transfer"></i></td>
+							<td><i class="glyphicon-iphone-exchange" rel="tooltip" title=".glyphicon-iphone-exchange"></i></td>
+							<td><i class="glyphicon-ipod" rel="tooltip" title=".glyphicon-ipod"></i></td>
+							<td><i class="glyphicon-ipod-shuffle" rel="tooltip" title=".glyphicon-ipod-shuffle"></i></td>
+							<td><i class="glyphicon-ear-plugs" rel="tooltip" title=".glyphicon-ear-plugs"></i></td>
+							<td><i class="glyphicon-albums" rel="tooltip" title=".glyphicon-albums"></i></td>
+							<td><i class="glyphicon-step-backward" rel="tooltip" title=".glyphicon-step-backward"></i></td>
+							<td><i class="glyphicon-fast-backward" rel="tooltip" title=".glyphicon-fast-backward"></i></td>
+							<td><i class="glyphicon-rewind" rel="tooltip" title=".glyphicon-rewind"></i></td>
+							<td><i class="glyphicon-play" rel="tooltip" title=".glyphicon-play"></i></td>
+							<td><i class="glyphicon-pause" rel="tooltip" title=".glyphicon-pause"></i></td>
+							<td><i class="glyphicon-stop" rel="tooltip" title=".glyphicon-stop"></i></td>
+							<td><i class="glyphicon-forward" rel="tooltip" title=".glyphicon-forward"></i></td>
+							<td><i class="glyphicon-fast-forward" rel="tooltip" title=".glyphicon-fast-forward"></i></td>
+							<td><i class="glyphicon-step-forward" rel="tooltip" title=".glyphicon-step-forward"></i></td>
+							<td><i class="glyphicon-eject" rel="tooltip" title=".glyphicon-eject"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-facetime-video" rel="tooltip" title=".glyphicon-facetime-video"></i></td>
+							<td><i class="glyphicon-download-alt" rel="tooltip" title=".glyphicon-download-alt"></i></td>
+							<td><i class="glyphicon-mute" rel="tooltip" title=".glyphicon-mute"></i></td>
+							<td><i class="glyphicon-volume-down" rel="tooltip" title=".glyphicon-volume-down"></i></td>
+							<td><i class="glyphicon-volume-up" rel="tooltip" title=".glyphicon-volume-up"></i></td>
+							<td><i class="glyphicon-screenshot" rel="tooltip" title=".glyphicon-screenshot"></i></td>
+							<td><i class="glyphicon-move" rel="tooltip" title=".glyphicon-move"></i></td>
+							<td><i class="glyphicon-more" rel="tooltip" title=".glyphicon-more"></i></td>
+							<td><i class="glyphicon-brightness-reduce" rel="tooltip" title=".glyphicon-brightness-reduce"></i></td>
+							<td><i class="glyphicon-brightness-increase" rel="tooltip" title=".glyphicon-brightness-increase"></i></td>
+							<td><i class="glyphicon-circle-plus" rel="tooltip" title=".glyphicon-circle-plus"></i></td>
+							<td><i class="glyphicon-circle-minus" rel="tooltip" title=".glyphicon-circle-minus"></i></td>
+							<td><i class="glyphicon-circle-remove" rel="tooltip" title=".glyphicon-circle-remove"></i></td>
+							<td><i class="glyphicon-circle-ok" rel="tooltip" title=".glyphicon-circle-ok"></i></td>
+							<td><i class="glyphicon-circle-question-" rel="tooltip" title=".glyphicon-circle-question-"></i></td>
+							<td><i class="glyphicon-circle-info" rel="tooltip" title=".glyphicon-circle-info"></i></td>
+							<td><i class="glyphicon-circle-exclamation-" rel="tooltip" title=".glyphicon-circle-exclamation-"></i></td>
+							<td><i class="glyphicon-remove" rel="tooltip" title=".glyphicon-remove"></i></td>
+							<td><i class="glyphicon-ok" rel="tooltip" title=".glyphicon-ok"></i></td>
+							<td><i class="glyphicon-ban" rel="tooltip" title=".glyphicon-ban"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-download" rel="tooltip" title=".glyphicon-download"></i></td>
+							<td><i class="glyphicon-upload" rel="tooltip" title=".glyphicon-upload"></i></td>
+							<td><i class="glyphicon-shopping-cart" rel="tooltip" title=".glyphicon-shopping-cart"></i></td>
+							<td><i class="glyphicon-lock" rel="tooltip" title=".glyphicon-lock"></i></td>
+							<td><i class="glyphicon-unlock" rel="tooltip" title=".glyphicon-unlock"></i></td>
+							<td><i class="glyphicon-electricity" rel="tooltip" title=".glyphicon-electricity"></i></td>
+							<td><i class="glyphicon-ok-2" rel="tooltip" title=".glyphicon-ok-2"></i></td>
+							<td><i class="glyphicon-remove-2" rel="tooltip" title=".glyphicon-remove-2"></i></td>
+							<td><i class="glyphicon-cart-out" rel="tooltip" title=".glyphicon-cart-out"></i></td>
+							<td><i class="glyphicon-cart-in" rel="tooltip" title=".glyphicon-cart-in"></i></td>
+							<td><i class="glyphicon-left-arrow" rel="tooltip" title=".glyphicon-left-arrow"></i></td>
+							<td><i class="glyphicon-right-arrow" rel="tooltip" title=".glyphicon-right-arrow"></i></td>
+							<td><i class="glyphicon-down-arrow" rel="tooltip" title=".glyphicon-down-arrow"></i></td>
+							<td><i class="glyphicon-up-arrow" rel="tooltip" title=".glyphicon-up-arrow"></i></td>
+							<td><i class="glyphicon-resize-small" rel="tooltip" title=".glyphicon-resize-small"></i></td>
+							<td><i class="glyphicon-resize-full" rel="tooltip" title=".glyphicon-resize-full"></i></td>
+							<td><i class="glyphicon-circle-arrow-" rel="tooltip" title=".glyphicon-circle-arrow-"></i></td>
+							<td><i class="glyphicon-circle-arrow-" rel="tooltip" title=".glyphicon-circle-arrow-"></i></td>
+							<td><i class="glyphicon-circle-arrow-" rel="tooltip" title=".glyphicon-circle-arrow-"></i></td>
+							<td><i class="glyphicon-circle-arrow-" rel="tooltip" title=".glyphicon-circle-arrow-"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-play-button" rel="tooltip" title=".glyphicon-play-button"></i></td>
+							<td><i class="glyphicon-unshare" rel="tooltip" title=".glyphicon-unshare"></i></td>
+							<td><i class="glyphicon-share" rel="tooltip" title=".glyphicon-share"></i></td>
+							<td><i class="glyphicon-thin-right-" rel="tooltip" title=".glyphicon-thin-right-"></i></td>
+							<td><i class="glyphicon-thin-arrow-" rel="tooltip" title=".glyphicon-thin-arrow-"></i></td>
+							<td><i class="glyphicon-bluetooth" rel="tooltip" title=".glyphicon-bluetooth"></i></td>
+							<td><i class="glyphicon-euro" rel="tooltip" title=".glyphicon-euro"></i></td>
+							<td><i class="glyphicon-usd" rel="tooltip" title=".glyphicon-usd"></i></td>
+							<td><i class="glyphicon-bp" rel="tooltip" title=".glyphicon-bp"></i></td>
+							<td><i class="glyphicon-retweet-2" rel="tooltip" title=".glyphicon-retweet-2"></i></td>
+							<td><i class="glyphicon-moon" rel="tooltip" title=".glyphicon-moon"></i></td>
+							<td><i class="glyphicon-sun" rel="tooltip" title=".glyphicon-sun"></i></td>
+							<td><i class="glyphicon-cloud" rel="tooltip" title=".glyphicon-cloud"></i></td>
+							<td><i class="glyphicon-direction" rel="tooltip" title=".glyphicon-direction"></i></td>
+							<td><i class="glyphicon-brush" rel="tooltip" title=".glyphicon-brush"></i></td>
+							<td><i class="glyphicon-pen" rel="tooltip" title=".glyphicon-pen"></i></td>
+							<td><i class="glyphicon-zoom-in" rel="tooltip" title=".glyphicon-zoom-in"></i></td>
+							<td><i class="glyphicon-zoom-out" rel="tooltip" title=".glyphicon-zoom-out"></i></td>
+							<td><i class="glyphicon-pin" rel="tooltip" title=".glyphicon-pin"></i></td>
+							<td><i class="glyphicon-riflescope" rel="tooltip" title=".glyphicon-riflescope"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-rotation-lock" rel="tooltip" title=".glyphicon-rotation-lock"></i></td>
+							<td><i class="glyphicon-flash" rel="tooltip" title=".glyphicon-flash"></i></td>
+							<td><i class="glyphicon-google-maps" rel="tooltip" title=".glyphicon-google-maps"></i></td>
+							<td><i class="glyphicon-anchor" rel="tooltip" title=".glyphicon-anchor"></i></td>
+							<td><i class="glyphicon-conversation" rel="tooltip" title=".glyphicon-conversation"></i></td>
+							<td><i class="glyphicon-chat" rel="tooltip" title=".glyphicon-chat"></i></td>
+							<td><i class="glyphicon-male" rel="tooltip" title=".glyphicon-male"></i></td>
+							<td><i class="glyphicon-female" rel="tooltip" title=".glyphicon-female"></i></td>
+							<td><i class="glyphicon-asterisk" rel="tooltip" title=".glyphicon-asterisk"></i></td>
+							<td><i class="glyphicon-divide" rel="tooltip" title=".glyphicon-divide"></i></td>
+							<td><i class="glyphicon-snorkel-diving" rel="tooltip" title=".glyphicon-snorkel-diving"></i></td>
+							<td><i class="glyphicon-scuba-diving" rel="tooltip" title=".glyphicon-scuba-diving"></i></td>
+							<td><i class="glyphicon-oxygen-bottle" rel="tooltip" title=".glyphicon-oxygen-bottle"></i></td>
+							<td><i class="glyphicon-fins" rel="tooltip" title=".glyphicon-fins"></i></td>
+							<td><i class="glyphicon-fishes" rel="tooltip" title=".glyphicon-fishes"></i></td>
+							<td><i class="glyphicon-boat" rel="tooltip" title=".glyphicon-boat"></i></td>
+							<td><i class="glyphicon-delete-point" rel="tooltip" title=".glyphicon-delete-point"></i></td>
+							<td><i class="glyphicon-sheriffs--star" rel="tooltip" title=".glyphicon-sheriffs--star"></i></td>
+							<td><i class="glyphicon-qrcode" rel="tooltip" title=".glyphicon-qrcode"></i></td>
+							<td><i class="glyphicon-barcode" rel="tooltip" title=".glyphicon-barcode"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-pool" rel="tooltip" title=".glyphicon-pool"></i></td>
+							<td><i class="glyphicon-buoy" rel="tooltip" title=".glyphicon-buoy"></i></td>
+							<td><i class="glyphicon-spade" rel="tooltip" title=".glyphicon-spade"></i></td>
+							<td><i class="glyphicon-bank" rel="tooltip" title=".glyphicon-bank"></i></td>
+							<td><i class="glyphicon-vcard" rel="tooltip" title=".glyphicon-vcard"></i></td>
+							<td><i class="glyphicon-electrical-plug" rel="tooltip" title=".glyphicon-electrical-plug"></i></td>
+							<td><i class="glyphicon-flag" rel="tooltip" title=".glyphicon-flag"></i></td>
+							<td><i class="glyphicon-credit-card" rel="tooltip" title=".glyphicon-credit-card"></i></td>
+							<td><i class="glyphicon-keyboard-wireless" rel="tooltip" title=".glyphicon-keyboard-wireless"></i></td>
+							<td><i class="glyphicon-keyboard-wired" rel="tooltip" title=".glyphicon-keyboard-wired"></i></td>
+							<td><i class="glyphicon-shield" rel="tooltip" title=".glyphicon-shield"></i></td>
+							<td><i class="glyphicon-ring" rel="tooltip" title=".glyphicon-ring"></i></td>
+							<td><i class="glyphicon-cake" rel="tooltip" title=".glyphicon-cake"></i></td>
+							<td><i class="glyphicon-drink" rel="tooltip" title=".glyphicon-drink"></i></td>
+							<td><i class="glyphicon-beer" rel="tooltip" title=".glyphicon-beer"></i></td>
+							<td><i class="glyphicon-fast-food" rel="tooltip" title=".glyphicon-fast-food"></i></td>
+							<td><i class="glyphicon-cutlery" rel="tooltip" title=".glyphicon-cutlery"></i></td>
+							<td><i class="glyphicon-pizza" rel="tooltip" title=".glyphicon-pizza"></i></td>
+							<td><i class="glyphicon-birthday-cake" rel="tooltip" title=".glyphicon-birthday-cake"></i></td>
+							<td><i class="glyphicon-tablet" rel="tooltip" title=".glyphicon-tablet"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-settings" rel="tooltip" title=".glyphicon-settings"></i></td>
+							<td><i class="glyphicon-bullets" rel="tooltip" title=".glyphicon-bullets"></i></td>
+							<td><i class="glyphicon-cardio" rel="tooltip" title=".glyphicon-cardio"></i></td>
+							<td><i class="glyphicon-t-shirt" rel="tooltip" title=".glyphicon-t-shirt"></i></td>
+							<td><i class="glyphicon-pants" rel="tooltip" title=".glyphicon-pants"></i></td>
+							<td><i class="glyphicon-sweater" rel="tooltip" title=".glyphicon-sweater"></i></td>
+							<td><i class="glyphicon-fabric" rel="tooltip" title=".glyphicon-fabric"></i></td>
+							<td><i class="glyphicon-leather" rel="tooltip" title=".glyphicon-leather"></i></td>
+							<td><i class="glyphicon-scissors" rel="tooltip" title=".glyphicon-scissors"></i></td>
+							<td><i class="glyphicon-podium" rel="tooltip" title=".glyphicon-podium"></i></td>
+							<td><i class="glyphicon-skull" rel="tooltip" title=".glyphicon-skull"></i></td>
+							<td><i class="glyphicon-celebration" rel="tooltip" title=".glyphicon-celebration"></i></td>
+							<td><i class="glyphicon-tea-kettle" rel="tooltip" title=".glyphicon-tea-kettle"></i></td>
+							<td><i class="glyphicon-french-press" rel="tooltip" title=".glyphicon-french-press"></i></td>
+							<td><i class="glyphicon-coffe-cup" rel="tooltip" title=".glyphicon-coffe-cup"></i></td>
+							<td><i class="glyphicon-pot" rel="tooltip" title=".glyphicon-pot"></i></td>
+							<td><i class="glyphicon-grater" rel="tooltip" title=".glyphicon-grater"></i></td>
+							<td><i class="glyphicon-kettle" rel="tooltip" title=".glyphicon-kettle"></i></td>
+							<td><i class="glyphicon-hospital" rel="tooltip" title=".glyphicon-hospital"></i></td>
+							<td><i class="glyphicon-hospital-h" rel="tooltip" title=".glyphicon-hospital-h"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-microphone" rel="tooltip" title=".glyphicon-microphone"></i></td>
+							<td><i class="glyphicon-webcam" rel="tooltip" title=".glyphicon-webcam"></i></td>
+							<td><i class="glyphicon-temple-christianity-" rel="tooltip" title=".glyphicon-temple-christianity-"></i></td>
+							<td><i class="glyphicon-temple-islam" rel="tooltip" title=".glyphicon-temple-islam"></i></td>
+							<td><i class="glyphicon-temple-hindu" rel="tooltip" title=".glyphicon-temple-hindu"></i></td>
+							<td><i class="glyphicon-temple-buddhist" rel="tooltip" title=".glyphicon-temple-buddhist"></i></td>
+							<td><i class="glyphicon-electrical-socket-" rel="tooltip" title=".glyphicon-electrical-socket-"></i></td>
+							<td><i class="glyphicon-electrical-socket-" rel="tooltip" title=".glyphicon-electrical-socket-"></i></td>
+							<td><i class="glyphicon-bomb" rel="tooltip" title=".glyphicon-bomb"></i></td>
+							<td><i class="glyphicon-comments" rel="tooltip" title=".glyphicon-comments"></i></td>
+							<td><i class="glyphicon-flower" rel="tooltip" title=".glyphicon-flower"></i></td>
+							<td><i class="glyphicon-baseball" rel="tooltip" title=".glyphicon-baseball"></i></td>
+							<td><i class="glyphicon-rugby" rel="tooltip" title=".glyphicon-rugby"></i></td>
+							<td><i class="glyphicon-ax" rel="tooltip" title=".glyphicon-ax"></i></td>
+							<td><i class="glyphicon-table-tennis" rel="tooltip" title=".glyphicon-table-tennis"></i></td>
+							<td><i class="glyphicon-bowling" rel="tooltip" title=".glyphicon-bowling"></i></td>
+							<td><i class="glyphicon-tree-conifer" rel="tooltip" title=".glyphicon-tree-conifer"></i></td>
+							<td><i class="glyphicon-tree-deciduous" rel="tooltip" title=".glyphicon-tree-deciduous"></i></td>
+							<td><i class="glyphicon-more-items" rel="tooltip" title=".glyphicon-more-items"></i></td>
+							<td><i class="glyphicon-sort" rel="tooltip" title=".glyphicon-sort"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-filter" rel="tooltip" title=".glyphicon-filter"></i></td>
+							<td><i class="glyphicon-gamepad" rel="tooltip" title=".glyphicon-gamepad"></i></td>
+							<td><i class="glyphicon-playing-dices" rel="tooltip" title=".glyphicon-playing-dices"></i></td>
+							<td><i class="glyphicon-calculator" rel="tooltip" title=".glyphicon-calculator"></i></td>
+							<td><i class="glyphicon-tie" rel="tooltip" title=".glyphicon-tie"></i></td>
+							<td><i class="glyphicon-wallet" rel="tooltip" title=".glyphicon-wallet"></i></td>
+							<td><i class="glyphicon-share" rel="tooltip" title=".glyphicon-share"></i></td>
+							<td><i class="glyphicon-sampler" rel="tooltip" title=".glyphicon-sampler"></i></td>
+							<td><i class="glyphicon-piano" rel="tooltip" title=".glyphicon-piano"></i></td>
+							<td><i class="glyphicon-web-browser" rel="tooltip" title=".glyphicon-web-browser"></i></td>
+							<td><i class="glyphicon-blog" rel="tooltip" title=".glyphicon-blog"></i></td>
+							<td><i class="glyphicon-dashboard" rel="tooltip" title=".glyphicon-dashboard"></i></td>
+							<td><i class="glyphicon-certificate" rel="tooltip" title=".glyphicon-certificate"></i></td>
+							<td><i class="glyphicon-bell" rel="tooltip" title=".glyphicon-bell"></i></td>
+							<td><i class="glyphicon-candle" rel="tooltip" title=".glyphicon-candle"></i></td>
+							<td><i class="glyphicon-pin-classsic" rel="tooltip" title=".glyphicon-pin-classsic"></i></td>
+							<td><i class="glyphicon-iphone-shake" rel="tooltip" title=".glyphicon-iphone-shake"></i></td>
+							<td><i class="glyphicon-pin-flag" rel="tooltip" title=".glyphicon-pin-flag"></i></td>
+							<td><i class="glyphicon-turtle" rel="tooltip" title=".glyphicon-turtle"></i></td>
+							<td><i class="glyphicon-rabbit" rel="tooltip" title=".glyphicon-rabbit"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-globe" rel="tooltip" title=".glyphicon-globe"></i></td>
+							<td><i class="glyphicon-briefcase" rel="tooltip" title=".glyphicon-briefcase"></i></td>
+							<td><i class="glyphicon-hdd" rel="tooltip" title=".glyphicon-hdd"></i></td>
+							<td><i class="glyphicon-thumbs-up" rel="tooltip" title=".glyphicon-thumbs-up"></i></td>
+							<td><i class="glyphicon-thumbs-down" rel="tooltip" title=".glyphicon-thumbs-down"></i></td>
+							<td><i class="glyphicon-hand-right" rel="tooltip" title=".glyphicon-hand-right"></i></td>
+							<td><i class="glyphicon-hand-left" rel="tooltip" title=".glyphicon-hand-left"></i></td>
+							<td><i class="glyphicon-hand-up" rel="tooltip" title=".glyphicon-hand-up"></i></td>
+							<td><i class="glyphicon-hand-down" rel="tooltip" title=".glyphicon-hand-down"></i></td>
+							<td><i class="glyphicon-fullscreen" rel="tooltip" title=".glyphicon-fullscreen"></i></td>
+							<td><i class="glyphicon-shopping-bag" rel="tooltip" title=".glyphicon-shopping-bag"></i></td>
+							<td><i class="glyphicon-book-open" rel="tooltip" title=".glyphicon-book-open"></i></td>
+							<td><i class="glyphicon-nameplate" rel="tooltip" title=".glyphicon-nameplate"></i></td>
+							<td><i class="glyphicon-nameplate-alt" rel="tooltip" title=".glyphicon-nameplate-alt"></i></td>
+							<td><i class="glyphicon-vases" rel="tooltip" title=".glyphicon-vases"></i></td>
+							<td><i class="glyphicon-announcement" rel="tooltip" title=".glyphicon-announcement"></i></td>
+							<td><i class="glyphicon-dumbbell" rel="tooltip" title=".glyphicon-dumbbell"></i></td>
+							<td><i class="glyphicon-suitcase" rel="tooltip" title=".glyphicon-suitcase"></i></td>
+							<td><i class="glyphicon-file-import" rel="tooltip" title=".glyphicon-file-import"></i></td>
+							<td><i class="glyphicon-file-export" rel="tooltip" title=".glyphicon-file-export"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-pinterest" rel="tooltip" title=".glyphicon-pinterest"></i></td>
+							<td><i class="glyphicon-dropbox" rel="tooltip" title=".glyphicon-dropbox"></i></td>
+							<td><i class="glyphicon-google-alt" rel="tooltip" title=".glyphicon-google-alt"></i></td>
+							<td><i class="glyphicon-jolicloud" rel="tooltip" title=".glyphicon-jolicloud"></i></td>
+							<td><i class="glyphicon-yahoo" rel="tooltip" title=".glyphicon-yahoo"></i></td>
+							<td><i class="glyphicon-blogger" rel="tooltip" title=".glyphicon-blogger"></i></td>
+							<td><i class="glyphicon-picasa" rel="tooltip" title=".glyphicon-picasa"></i></td>
+							<td><i class="glyphicon-amazon" rel="tooltip" title=".glyphicon-amazon"></i></td>
+							<td><i class="glyphicon-tumblr" rel="tooltip" title=".glyphicon-tumblr"></i></td>
+							<td><i class="glyphicon-wordpress" rel="tooltip" title=".glyphicon-wordpress"></i></td>
+							<td><i class="glyphicon-instapaper" rel="tooltip" title=".glyphicon-instapaper"></i></td>
+							<td><i class="glyphicon-evernote" rel="tooltip" title=".glyphicon-evernote"></i></td>
+							<td><i class="glyphicon-xing" rel="tooltip" title=".glyphicon-xing"></i></td>
+							<td><i class="glyphicon-zootool" rel="tooltip" title=".glyphicon-zootool"></i></td>
+							<td><i class="glyphicon-dribbble" rel="tooltip" title=".glyphicon-dribbble"></i></td>
+							<td><i class="glyphicon-deviantart" rel="tooltip" title=".glyphicon-deviantart"></i></td>
+							<td><i class="glyphicon-read-it-" rel="tooltip" title=".glyphicon-read-it-"></i></td>
+							<td><i class="glyphicon-linked-in" rel="tooltip" title=".glyphicon-linked-in"></i></td>
+							<td><i class="glyphicon-forrst" rel="tooltip" title=".glyphicon-forrst"></i></td>
+							<td><i class="glyphicon-pinboard" rel="tooltip" title=".glyphicon-pinboard"></i></td>
+						</tr>
+						<tr>
+							<td><i class="glyphicon-behance" rel="tooltip" title=".glyphicon-behance"></i></td>
+							<td><i class="glyphicon-github" rel="tooltip" title=".glyphicon-github"></i></td>
+							<td><i class="glyphicon-youtube" rel="tooltip" title=".glyphicon-youtube"></i></td>
+							<td><i class="glyphicon-skitch" rel="tooltip" title=".glyphicon-skitch"></i></td>
+							<td><i class="glyphicon-4square" rel="tooltip" title=".glyphicon-4square"></i></td>
+							<td><i class="glyphicon-quora" rel="tooltip" title=".glyphicon-quora"></i></td>
+							<td><i class="glyphicon-google-plus" rel="tooltip" title=".glyphicon-google-plus"></i></td>
+							<td><i class="glyphicon-spootify" rel="tooltip" title=".glyphicon-spootify"></i></td>
+							<td><i class="glyphicon-stumbleupon" rel="tooltip" title=".glyphicon-stumbleupon"></i></td>
+							<td><i class="glyphicon-readability" rel="tooltip" title=".glyphicon-readability"></i></td>
+							<td><i class="glyphicon-facebook" rel="tooltip" title=".glyphicon-facebook"></i></td>
+							<td><i class="glyphicon-twitter-t" rel="tooltip" title=".glyphicon-twitter-t"></i></td>
+							<td><i class="glyphicon-twitter" rel="tooltip" title=".glyphicon-twitter"></i></td>
+							<td><i class="glyphicon-buzz" rel="tooltip" title=".glyphicon-buzz"></i></td>
+							<td><i class="glyphicon-vimeo" rel="tooltip" title=".glyphicon-vimeo"></i></td>
+							<td><i class="glyphicon-flickr" rel="tooltip" title=".glyphicon-flickr"></i></td>
+							<td><i class="glyphicon-last-fm" rel="tooltip" title=".glyphicon-last-fm"></i></td>
+							<td><i class="glyphicon-rss" rel="tooltip" title=".glyphicon-rss"></i></td>
+							<td><i class="glyphicon-skype" rel="tooltip" title=".glyphicon-skype"></i></td>
+							<td><i class="glyphicon-e-mail" rel="tooltip" title=".glyphicon-e-mail"></i></td>
+						</tr>
+					</tbody></table>
+					<script type="text/javascript"> $('[rel=tooltip]').tooltip(); </script>
+				</div>
+			</div><!-- END main-content-row -->
+			<!-- BEGIN #main-content-row -->
+			<div class="row-fluid" id="main-content-row">
+				<div class="span6">
+					<h2><i class="glyphicon-glass"></i> Buttons markup</h2>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Button</th>
+								<th>class=""</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><button class="btn" href="#">Default</button></td>
+								<td><code>btn</code></td>
+								<td>Standard gray button with gradient</td>
+							</tr>
+							<tr>
+								<td><button class="btn btn-primary" href="#">Primary</button></td>
+								<td><code>btn btn-primary</code></td>
+								<td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+							</tr>
+							<tr>
+								<td><button class="btn btn-info" href="#">Info</button></td>
+								<td><code>btn btn-info</code></td>
+								<td>Used as an alternative to the default styles</td>
+							</tr>
+							<tr>
+								<td><button class="btn btn-success" href="#">Success</button></td>
+								<td><code>btn btn-success</code></td>
+								<td>Indicates a successful or positive action</td>
+							</tr>
+							<tr>
+								<td><button class="btn btn-warning" href="#">Warning</button></td>
+								<td><code>btn btn-warning</code></td>
+								<td>Indicates caution should be taken with this action</td>
+							</tr>
+							<tr>
+								<td><button class="btn btn-danger" href="#">Danger</button></td>
+								<td><code>btn btn-danger</code></td>
+								<td>Indicates a dangerous or potentially negative action</td>
+							</tr>
+							<tr>
+								<td><button class="btn btn-inverse" href="#">Inverse</button></td>
+								<td><code>btn btn-inverse</code></td>
+								<td>Alternate dark gray button, not tied to a semantic action or use</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="span6">
+					<h2><i class="glyphicon-glass"></i> Buttons</h2>
+					<p class="padding">Use the buttons plugin for states and toggles.</p>
+					<table class="table table-bordered table-striped">
+								<tbody>
+									<tr>
+										<td>Stateful</td>
+										<td>
+												<button id="fat-btn" data-loading-text="loading..." class="btn btn-primary">
+													Loading State
+												</button>
+											</td>
+									 </tr>
+									 <tr>
+										 <td>Single toggle</td>
+										 <td>
+												<button class="btn btn-primary" data-toggle="button">Single Toggle</button>
+											</td>
+									 </tr>
+									 <tr>
+										 <td>Checkbox</td>
+										 <td>
+												<div class="btn-group" data-toggle="buttons-checkbox">
+													<button class="btn btn-primary">Left</button>
+													<button class="btn btn-primary">Middle</button>
+													<button class="btn btn-primary">Right</button>
+												</div>
+										 </td>
+									 </tr>
+									 <tr>
+										 <td>Radio</td>
+										 <td>
+												<div class="btn-group" data-toggle="buttons-radio">
+													<button class="btn btn-primary">Left</button>
+													<button class="btn btn-primary">Middle</button>
+													<button class="btn btn-primary">Right</button>
+												</div>
+										 </td>
+									 </tr>
+									</tbody>
+								</table>
+				</div><!--/span-->
+			</div><!-- END main-content-row -->
+			<!-- BEGIN #main-content-row -->
+			<div class="row-fluid" id="main-content-row">
+				<div class="span6">
+					<h2><i class="glyphicon-glass"></i> Inline labels</h2>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Labels</th>
+								<th>Markup</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<span class="label">Default</span>
+								</td>
+								<td>
+									<code>&lt;span class="label"&gt;Default&lt;/span&gt;</code>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="label label-success">Success</span>
+								</td>
+								<td>
+									<code>&lt;span class="label label-success"&gt;Success&lt;/span&gt;</code>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="label label-warning">Warning</span>
+								</td>
+								<td>
+									<code>&lt;span class="label label-warning"&gt;Warning&lt;/span&gt;</code>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="label label-important">Important</span>
+								</td>
+								<td>
+									<code>&lt;span class="label label-important"&gt;Important&lt;/span&gt;</code>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="label label-info">Info</span>
+								</td>
+								<td>
+									<code>&lt;span class="label label-info"&gt;Info&lt;/span&gt;</code>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="label label-inverse">Inverse</span>
+								</td>
+								<td>
+									<code>&lt;span class="label label-inverse"&gt;Inverse&lt;/span&gt;</code>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="span6">
+					<h2><i class="glyphicon-glass"></i> Badge</h2>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+							<th>Name</th>
+							<th>Example</th>
+							<th>Markup</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							<td>
+								Default
+							</td>
+							<td>
+								<span class="badge">1</span>
+							</td>
+							<td>
+								<code>&lt;span class="badge"&gt;1&lt;/span&gt;</code>
+							</td>
+							</tr>
+							<tr>
+							<td>
+								Success
+							</td>
+							<td>
+								<span class="badge badge-success">2</span>
+							</td>
+							<td>
+								<code>&lt;span class="badge badge-success"&gt;2&lt;/span&gt;</code>
+							</td>
+							</tr>
+							<tr>
+							<td>
+								Warning
+							</td>
+							<td>
+								<span class="badge badge-warning">4</span>
+							</td>
+							<td>
+								<code>&lt;span class="badge badge-warning"&gt;4&lt;/span&gt;</code>
+							</td>
+							</tr>
+							<tr>
+							<td>
+								Important
+							</td>
+							<td>
+								<span class="badge badge-important">6</span>
+							</td>
+							<td>
+								<code>&lt;span class="badge badge-important"&gt;6&lt;/span&gt;</code>
+							</td>
+							</tr>
+							<tr>
+							<td>
+								Info
+							</td>
+							<td>
+								<span class="badge badge-info">8</span>
+							</td>
+							<td>
+								<code>&lt;span class="badge badge-info"&gt;8&lt;/span&gt;</code>
+							</td>
+							</tr>
+							<tr>
+							<td>
+								Inverse
+							</td>
+							<td>
+								<span class="badge badge-inverse">10</span>
+							</td>
+							<td>
+								<code>&lt;span class="badge badge-inverse"&gt;10&lt;/span&gt;</code>
+							</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div><!-- END main-content-row -->
+		</div><!-- END #main-content -->
+	</div><!-- END #main -->
+
+	<!-- BEGIN #footer -->
+	<div class="footer" id="footer">
+		<ul>
+			<li><a href="tables.html">Users</a></li>
+			<li><a href="tables.html">Entries</a></li>
+			<li><a href="404.html">Comments</a></li>
+			<li><a href="images.html">Images</a></li>
+			<li><a href="statistics.html">Stats</a></li>
+			<li><a href="404.html">Security</a></li>
+		</ul>
+		<div class="clearfix"></div>
+	</div> <!-- END #footer -->
+
+</body>
+</html>
