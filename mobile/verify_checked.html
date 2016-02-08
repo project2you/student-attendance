@@ -1,0 +1,168 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta charset="UTF-8">
+	<title>Page Title</title> 
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<style>
+	table {
+		color: black;
+		background: #fff;
+		border: 1px solid #b4b4b4;
+		font: bold 17px helvetica;
+		padding: 0;
+		margin-top:10px;
+		width: 100%;
+		-webkit-border-radius: 8px;
+	}
+		 
+	table tr td {
+		color: #666;
+		border-bottom: 1px solid #b4b4b4;
+		border-right: 1px solid #b4b4b4;
+		padding: 10px 10px 10px 10px;
+		background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+	}
+			 
+	table tr td:last-child {
+		border-right: none;
+	}
+
+	table tr:last-child td {
+		border-bottom: none;
+	}
+	</style>
+
+	<script>
+		function getQueryParams(qs) {
+			qs = qs.split('+').join(' ');
+
+			var params = {},
+				tokens,
+				re = /[?&]?([^=]+)=([^&]*)/g;
+
+			while (tokens = re.exec(qs)) {
+				params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+			}
+
+			return params;
+		}
+
+	  $( document ).ready(function() {
+
+			var item = getQueryParams(document.location.search);
+			//alert(item.dep_id);
+
+			$.post("http://162.208.8.70/webapp/mobile/add_verify/",{ id : item.id , maj_id : item.maj_id , dep_id : item.dep_id  ,  ter_id : item.ter_id   , yea_id : item.yea_id  , std_reg_id : item.std_reg_id},function(result){
+				$("#myList").append(result);
+				$("#myList").listview("refresh");
+				//$("#myList").load("demo.txt");
+			 });
+
+			$("#save_data").click(function(){
+				//$("div").text($("myForm").serialize());
+
+				$.mobile.changePage("#pageone", {  });
+
+				var data = $('#myForm').serializeArray();
+				
+				var datastring = $("#myForm").serialize();
+				$.ajax({
+							type: "POST",
+							url: "http://162.208.8.70/webapp/mobile/mobile_save_verify/",
+							data: datastring,
+							success: function(data) {
+								//var obj = jQuery.parseJSON(data); if the dataType is not specified as json uncomment this
+								// do what ever you want with the server response
+								$.mobile.changePage("#pagetwo", {  });
+							},
+							error: function(){
+								  alert('error handing here');
+							}
+						});
+
+			});
+			
+			$("#cancel").click(function(){
+				alert(1);
+			});
+
+		});
+
+	</script>
+
+</head> 
+<body> 
+
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>รายชื่อนักศึกษา</h1>
+        <a href="verify.html" rel="external">กลับสู่เมนูหลัก</a>
+	</div><!-- /header -->
+   
+	<div data-role="content">
+		
+		<div data-role="listview" data-filter="true" id="myList">
+			
+		</div>
+		
+	</div><!-- /content -->
+
+
+	<button id="save_data">บันทึกรายการ</button>
+
+	<button id ="cancel" >ยกเลิกรายการ</button>
+
+
+    <div data-role="footer">
+        <h4></h4>
+    </div>
+</div><!-- /page -->
+
+
+<div data-role="page" data-dialog="true" id="pageone">
+
+  <div data-role="header">
+    <h1>รอสักสครู่..ระบบกำลังบันทึกข้อมูล</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p> กรุณารอสักครู่...ระบบกำลังบันทึกข้อมูลอยู่ในขณะนี้ </>
+  </div>
+
+  <div data-role="footer">
+    <h1></h1>
+  </div>
+
+</div>
+
+
+<div data-role="page" data-dialog="true" id="pagetwo">
+
+  <div data-role="header">
+    <h1>ระบบได้ทำการบันทึกสำเร็จ!</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p> ระบบได้ทำการบันทึกข้อมูลเรียบร้อยแล้ว!!! </>
+    <a href="verify.html" rel="external" >กลับสู่เมนู</a>
+  </div>
+
+  <div data-role="footer">
+    <h1></h1>
+  </div>
+
+</div>
+
+
+</body>
+</html>
+

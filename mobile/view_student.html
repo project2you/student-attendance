@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+	<head>
+	<meta charset="utf-8" /> 
+	<title>Real World Admin - Events Page</title> 
+	<link rel="stylesheet" href="css/main.css" /> 
+	<link rel="stylesheet" href="css/theme2.css" />  
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0a2.min.js"></script> 
+
+	<script>
+
+		function getParameter(paramName) {
+		  var searchString = window.location.search.substring(1),
+			  i, val, params = searchString.split("&");
+
+		  for (i=0;i<params.length;i++) {
+			val = params[i].split("=");
+			if (val[0] == paramName) {
+			  return unescape(val[1]);
+			}
+		  }
+		  return null;
+		}
+
+		$( document ).ready(function() {
+
+			
+
+			var id = getParameter('id');
+			$.post("http://162.208.8.70/webapp/mobile/checkinout/",{id:id},function(result){
+				$("#myList").append(result);
+				$("#myList").listview("refresh");
+			 });
+
+			$('#myList').delegate('li', 'click', function () {
+				var user_id=$(this).attr('id');
+					$.post("http://162.208.8.70/webapp/mobile/delete_view_student/",{id:user_id},function(result){
+						$("#myList").listview("refresh");
+						location.reload();	
+					});
+			});
+		});
+
+	</script>
+
+</head> 
+
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>ข้อมูลการลงเวลา</h1>
+        <a href="students.html" rel="external">กลับสู่เมนูหลัก</a>
+	</div><!-- /header -->
+   
+	<div data-role="content">
+		
+		<ul data-role="listview" data-filter="true" id="myList">
+			
+		</ul>
+
+	</div><!-- /content -->
+    <div data-role="footer">
+        <h4></h4>
+    </div>
+</div><!-- /page -->
+
+</body>
+</html>
+

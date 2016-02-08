@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html> 
+	<head>
+	<meta charset="utf-8" /> 
+	<title>Menu</title> 
+    <link rel="stylesheet" href="css/main.css" /> 
+	<link rel="stylesheet" id="active-theme" href="css/theme2.css" />  
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0a2.min.js"></script> 
+	<script src="js/themeswitcher.js"></script>
+    
+<style>
+	table {
+		color: black;
+		background: #fff;
+		border: 1px solid #b4b4b4;
+		font: bold 17px helvetica;
+		padding: 0;
+		margin-top:10px;
+		width: 100%;
+		-webkit-border-radius: 8px;
+	}
+		 
+	table tr td {
+		color: #666;
+		border-bottom: 1px solid #b4b4b4;
+		border-right: 1px solid #b4b4b4;
+		padding: 10px 10px 10px 10px;
+		background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+	}
+			 
+	table tr td:last-child {
+		border-right: none;
+	}
+
+	table tr:last-child td {
+		border-bottom: none;
+	}
+	</style>
+
+	<script>
+		function getQueryParams(qs) {
+			qs = qs.split('+').join(' ');
+
+			var params = {},
+				tokens,
+				re = /[?&]?([^=]+)=([^&]*)/g;
+
+			while (tokens = re.exec(qs)) {
+				params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+			}
+
+			return params;
+		}
+
+	  $( document ).ready(function() {
+
+			var item = getQueryParams(document.location.search);
+			//alert(item.dep_id);
+
+			$.post("http://162.208.8.70/webapp/mobile/mobile_statics/",{ },function(result){
+				$("#myList").append(result);
+				$("#myList").listview("refresh");
+				//$("#myList").load("demo.txt");
+			 });
+
+			
+		});
+
+	</script>
+
+        
+</head> 
+
+<body> 
+    <div data-role="page" id="recentproducts"> 
+     
+        <div data-role="header"> 
+            <h1>เมนูหลัก</h1> 
+
+        </div><!-- /header --> 
+     
+        <div data-role="content"> 
+        
+		      <div class="status success">ระบบบริหารการลงเวลา  1.0</div>
+			
+
+				<div data-role="listview"  id="myList">
+			
+		</div>
+              								  
+         </div><!-- /content --> 
+
+
+    <div data-role="footer">
+		  <h3></h3>
+    </div>
+
+    </div>
+
+</body>
+</html>

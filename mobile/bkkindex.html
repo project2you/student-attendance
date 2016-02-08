@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html> 
+	<head>
+	<meta charset="utf-8" /> 
+	<title>ระบบบริหารเช็คชื่อนักเรียน Students Attendance 1.0 </title> 
+    <link rel="stylesheet" href="css/main.css" /> 
+	<link rel="stylesheet" id="active-theme" href="css/theme2.css" />  
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0a2.min.js"></script> 
+	<script src="js/themeswitcher.js"></script>
+    
+   	<script type="text/javascript">
+		$(document).ready(function(){
+		$('#login-students').click(function() {
+			  window.location='http://162.208.8.70/webapp/front_login/';
+			  return false;
+			});
+
+		$('#login-webapp').click(function() {
+			  window.location='http://162.208.8.70/webapp/';
+			  return false;
+			});
+				
+		$('#login-mobile').click(function() {
+			  window.location='http://162.208.8.70/webapp/mobile/login.html';
+			  return false;
+			});
+			
+		});
+	</script>
+        
+</head> 
+
+<body> 
+    <div data-role="page" id="recentproducts"> 
+     
+        <div data-role="header"> 
+            <h1> ระบบบริหารการลงเวลา  Students Attendance </h1> 
+
+        </div><!-- /header --> 
+     
+        <div data-role="content"> 
+               
+			   <div class="status success">ท่านสามารถเลือกโหมดการทำงาน </div>
+
+              <a href="http://162.208.8.70/webapp/front_login/" data-role="button" id="login-students">
+              	<img src="images/user.png" width="64" height="64" /> <br />ผู้ใช้งานทั่วไป Students
+              </a>
+              
+         	  <a href="http://162.208.8.70/webapp/" id="login-webapp" data-role="button">
+              	<img src="images/admin.png" width="64" height="64" /> <br />ผู้ดูแลระบบ Web Application
+              </a>
+             
+
+         	  <a href="http://162.208.8.70/webapp/mobile/login.html" id="login-mobile" data-role="button">
+              	<img src="images/android.png" width="64" height="64" /> <br />ผู้ดูแลระบบ Mobile Application
+              </a>
+             
+
+        <div class="status info">ทีมงาน : http://depforce.com/ </div>              
+         </div><!-- /content --> 
+
+
+    <div data-role="footer">
+		  <h3></h3>
+    </div>
+
+    </div>
+
+
+
+</body>
+</html>

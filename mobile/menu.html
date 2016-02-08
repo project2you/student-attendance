@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html> 
+	<head>
+	<meta charset="utf-8" /> 
+	<title>Menu</title> 
+    <link rel="stylesheet" href="css/main.css" /> 
+	<link rel="stylesheet" id="active-theme" href="css/theme2.css" />  
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0a2.min.js"></script> 
+	<script src="js/themeswitcher.js"></script>
+    
+   	<script type="text/javascript">
+		$(document).ready(function(){
+			
+		$('#sto_catalog').click(function() {
+			  window.location='department.html';
+			  return false;
+			});
+
+		$('#sto_major').click(function() {
+			  window.location='major.html';
+			  return false;
+			});
+
+
+		$('#sto_customers').click(function() {
+			  window.location='students.html';
+			  return false;
+			});
+			
+		$('#sto_verify').click(function() {
+			  window.location='verify.html';
+			  return false;
+			});
+
+		$('#sto_statics').click(function() {
+			  window.location='statics.html';
+			  return false;
+			});
+			
+												
+		$('#sto_users').click(function() {
+			  window.location='users.html';
+			  return false;
+			});
+
+		$('#sto_setting').click(function() {
+			  window.location='changpassword.html';	
+			  return false;
+			});
+			
+		});
+	</script>
+        
+</head> 
+
+<body> 
+    <div data-role="page" id="recentproducts"> 
+     
+        <div data-role="header"> 
+            <h1>เมนูหลัก</h1> 
+
+        </div><!-- /header --> 
+     
+        <div data-role="content"> 
+        
+		      <div class="status success">ระบบบริหารการลงเวลา  1.0</div>
+
+			  <a href="#" data-role="button" id="sto_catalog">
+              	<img src="images/address_book.png" width="64" height="64" /> <br />ข้อมูลแผนก
+              </a>
+              
+
+			  <a href="#" data-role="button" id="sto_major">
+              	<img src="images/catalog-icon.png" width="64" height="64" /> <br />รายวิชาสอน
+              </a>
+
+			 
+         	  <a href="#" id="sto_verify" data-role="button">
+              	<img src="images/Product-documentation-icon.png" width="64" height="64" /> <br />ตารางสอน
+              </a>
+              
+
+         	  <a href="#" id="sto_statics" data-role="button">
+              	<img src="images/seo-icon.png" width="64" height="64" /> <br />สถติข้อมูล
+              </a>
+                            
+                                                                     
+         	  <a href="#" id="sto_setting" data-role="button">
+              	<img src="images/Developer-icon.png" width="64" height="64" /> <br />เปลี่ยนรหัสผ่าน              </a>
+              
+								  
+         </div><!-- /content --> 
+
+
+    <div data-role="footer">
+		  <h3></h3>
+    </div>
+
+    </div>
+
+</body>
+</html>
